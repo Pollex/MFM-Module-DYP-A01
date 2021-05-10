@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name PGA460)(type Legacy)(uri ${KIPRJMOD}/Libraries/PGA460TPW/PGA460TPW.lib)(options "")(descr ""))
+  (lib (name custom)(type Legacy)(uri ${KIPRJMOD}/Libraries/custom_library.lib)(options "")(descr ""))
+  (lib (name MFM-V4-rescue)(type Legacy)(uri /Users/mick/Dropbox/Avalution-Engineering/Work/MFM/KiCad/MFM-V4/MFM-V4-rescue.lib)(options "")(descr ""))
+  (lib (name MFM-Ultrasonic-sensor-rescue)(type Legacy)(uri ${KIPRJMOD}/MFM-Ultrasonic-sensor-rescue.lib)(options "")(descr ""))
+  (lib (name K4000004)(type Legacy)(uri ${KIPRJMOD}/Libraries/K4000004/K4000004.lib)(options "")(descr ""))
+)

@@ -1,0 +1,36 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP7370-33Y
+F https://nl.mouser.com/datasheet/2/115/AP7370-1605740.pdf
+$ENDCMP
+#
+$CMP Conn_01x02_+-
+D Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Logo_Open_Hardware_Small
+D Open Hardware logo, small
+K Logo
+F ~
+$ENDCMP
+#
+$CMP MFM_Communication_Module_6x5
+D Generic connectable mounting pin connector, double row, 02x06, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP MFM_Sensor_Module_4x6x4
+K connector
+F ~
+$ENDCMP
+#
+$CMP R_Shunt
+D Shunt resistor
+K R res shunt resistor
+F ~
+$ENDCMP
+#
+#End Doc Library
