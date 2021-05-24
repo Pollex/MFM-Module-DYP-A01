@@ -4,4 +4,5 @@
   (lib (name MFM-V4-rescue)(type Legacy)(uri /Users/mick/Dropbox/Avalution-Engineering/Work/MFM/KiCad/MFM-V4/MFM-V4-rescue.lib)(options "")(descr ""))
   (lib (name MFM-Ultrasonic-sensor-rescue)(type Legacy)(uri ${KIPRJMOD}/MFM-Ultrasonic-sensor-rescue.lib)(options "")(descr ""))
   (lib (name K4000004)(type Legacy)(uri ${KIPRJMOD}/Libraries/K4000004/K4000004.lib)(options "")(descr ""))
+  (lib (name MFM-Module-SEN0313-rescue)(type Legacy)(uri ${KIPRJMOD}/MFM-Module-SEN0313-rescue.lib)(options "")(descr ""))
 )
