@@ -190,11 +190,11 @@ X ~ 2 0 -100 30 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# MCU_Microchip_ATtiny_ATtiny814-SS
+# MCU_Microchip_ATtiny_ATtiny1614-SS
 #
-DEF MCU_Microchip_ATtiny_ATtiny814-SS U 0 20 Y Y 1 F N
+DEF MCU_Microchip_ATtiny_ATtiny1614-SS U 0 20 Y Y 1 F N
 F0 "U" -500 650 50 H V L BNN
-F1 "MCU_Microchip_ATtiny_ATtiny814-SS" 100 -650 50 H V L TNN
+F1 "MCU_Microchip_ATtiny_ATtiny1614-SS" 100 -650 50 H V L TNN
 F2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" 0 0 50 H I C CIN
 F3 "" 0 0 50 H I C CNN
 ALIAS ATtiny404-SS ATtiny804-SS ATtiny1604-SS ATtiny214-SS ATtiny414-SS ATtiny814-SS ATtiny1614-SS
