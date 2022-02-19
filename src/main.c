@@ -49,7 +49,7 @@ int main(void)
 }
 
 volatile uint16_t reading = 0xffff;
-volatile int16_t temperature = 0;
+volatile int16_t temperature = 850;
 void measurement(void)
 {
   SENSOR_PWR_PORT.OUTSET = 1 << SENSOR_PWR_PIN;
@@ -73,11 +73,12 @@ void twi_perform(uint8_t *buf, uint8_t length)
 
 void twi_read(uint8_t *buf, uint8_t length)
 {
-  buf[0] = 4;
-  buf[1] = (reading >> 8) & 0xff;
-  buf[2] = reading & 0xff;
-  buf[3] = (temperature >> 8) & 0xff;
-  buf[4] = temperature & 0xff;
+  buf[0] = 6;                         // Message length
+  buf[1] = 0x31;                      // Module type
+  buf[2] = (reading >> 8) & 0xff;     // Distance MSB
+  buf[3] = reading & 0xff;            // Distance LSB
+  buf[4] = (temperature >> 8) & 0xff; // Temp MSB
+  buf[5] = temperature & 0xff;        // Temp LSB
 }
 
 twi_cmd_t twi_cmds[] = {
