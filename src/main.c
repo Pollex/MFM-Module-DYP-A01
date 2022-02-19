@@ -29,6 +29,12 @@ sen0313_t sen0313 = {
     .tx_pin = SEN0313_TX_Pin,
 };
 
+typedef struct
+{
+  unsigned short distance;
+  float temperature;
+} packet_t;
+
 int main(void)
 {
   sei(); // Enable interrupts
@@ -48,8 +54,7 @@ int main(void)
   }
 }
 
-volatile uint16_t reading = 0xffff;
-volatile int16_t temperature = 850;
+volatile packet_t packet;
 void measurement(void)
 {
   SENSOR_PWR_PORT.OUTSET = 1 << SENSOR_PWR_PIN;
@@ -57,11 +62,11 @@ void measurement(void)
   // Read SEN0313
   sen0313_init(&sen0313);
   sen0313_read(&sen0313);
-  reading = sen0313_read(&sen0313);
 
-  // Read temperature
-  float t = ds18b20_read(0);
-  temperature = (int16_t)(t * 10);
+  packet = (packet_t){
+      .distance = sen0313_read(&sen0313),
+      .temperature = ds18b20_read(0),
+  };
 
   SENSOR_PWR_PORT.OUTCLR = 1 << SENSOR_PWR_PIN;
 }
@@ -73,12 +78,7 @@ void twi_perform(uint8_t *buf, uint8_t length)
 
 void twi_read(uint8_t *buf, uint8_t length)
 {
-  buf[0] = 6;                         // Message length
-  buf[1] = 0x31;                      // Module type
-  buf[2] = (reading >> 8) & 0xff;     // Distance MSB
-  buf[3] = reading & 0xff;            // Distance LSB
-  buf[4] = (temperature >> 8) & 0xff; // Temp MSB
-  buf[5] = temperature & 0xff;        // Temp LSB
+  memcpy(buf, &packet, sizeof(packet_t));
 }
 
 twi_cmd_t twi_cmds[] = {
