@@ -78,7 +78,8 @@ void twi_perform(uint8_t *buf, uint8_t length)
 
 void twi_read(uint8_t *buf, uint8_t length)
 {
-  memcpy(buf, &packet, sizeof(packet_t));
+  buf[0] = sizeof(packet_t);
+  memcpy(&buf[1], &packet, sizeof(packet_t));
 }
 
 twi_cmd_t twi_cmds[] = {
